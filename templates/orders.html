@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Commandes en Attente</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='orderStyle.css') }}"> 
+</head>
+<body>
+    <h1>Commandes en Attente</h1>
+    <ul>
+        {% for order in orders %}
+            <li>
+                {{ order['nom'] }} {{ order['prenom'] }} (Classe: {{ order['classe'] }}) - {{ order['crepe_type'] }}
+                <form method="POST" action="/mark_done/{{ order['id'] }}">
+                    <input type="submit" value="Marquer comme servie">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Retourner à la page de commande</a>
+</body>
+</html>

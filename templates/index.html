@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Commande de Crêpes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='indexStyle.css') }}" >
+</head>
+<body>
+    <h1>Commandez vos crêpes</h1>
+    <form method="POST">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+        
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+        
+        <label for="classe">Classe :</label>
+        <input type="text" id="classe" name="classe" required><br>
+        
+        <label for="crepe_type">Type de Crêpe :</label>
+        <select id="crepe_type" name="crepe_type" required>
+            <option value="Nutella">Nutella</option>
+            <option value="Sucre">Sucre</option>
+        </select><br>
+        
+        <input type="submit" value="Commander">
+    </form>
+    <a href="/orders">Voir les commandes en attente</a>
+</body>
+</html>
